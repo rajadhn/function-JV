@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="insta.css">
+    <title>Functions</title>
+</head>
+<body>
+    <img src="c:\Users\dell\Downloads\143shots_so.png" width="100%" alt="">
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <script>
+        const x = (x, y) => x*y;
+        document.getElementById("demo").innerHTML =x(8, 8);
+    </script>
+    <script>
+        function myFunction(x, y = 10) {
+            return x+y;
+        }
+        document.getElementById("demo2").innerHTML = myFunction(5);
+    </script>
+    <script>
+        const myObject = {
+            firstName:"Munna",
+            lastName:"Yadav",
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+
+            }
+        }
+        document.getElementById("demo3").innerHTML = myObject.fullName();
+    </script>
+    <script>
+        const person = {
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+
+            }
+        }
+        const person1 = {
+            firstName: "Ravi",
+            lastName: "Kumar"
+        }
+        const person2 = {
+            firstName:"Munna",
+            lastName: "Yadav"
+        }
+        document.getElementById("demo4").innerHTML = 
+        person.fullName.call(person1);
+    
+    </script>
+    <script>
+        const person = {
+            fullName: function(city, country) {
+                return this.firstName + " " + this.lastName + "," + city + "," +
+                country;
+            }
+        }
+        const person1 = {
+            firstName: "Munna",
+            lastName:"Yadav"
+        }
+
+        const person2 = {
+            firstName: "Mary",
+            lastName: "Disuza"
+        }
+        document.getElementById("demo5").innerHTML = 
+        person.fullName.call(person1, "Dhanbad", "India");
+    </script>
+</body>
+</html>
